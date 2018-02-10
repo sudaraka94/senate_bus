@@ -1,6 +1,6 @@
 package com.company;
 
-public class Rider implements Runnable {
+public class Rider extends Thread{
     @Override
     public void run() {
         try {
@@ -11,7 +11,8 @@ public class Rider implements Runnable {
 
             Main.bus.acquire();
             board();
-            Main.bus.release();
+            Main.boarded.release();
+
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -19,6 +20,6 @@ public class Rider implements Runnable {
     }
 
     private void board(){
-        System.out.println(String.valueOf(Thread.currentThread().getId())+"Boarding");
+        System.out.println(String.valueOf(Thread.currentThread().getId())+" Boarding");
     }
 }

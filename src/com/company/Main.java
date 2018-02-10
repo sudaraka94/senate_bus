@@ -9,17 +9,11 @@ public class Main {
     static Semaphore boarded=new Semaphore(0);
 
     public static void main(String[] args) {
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Rider().run();
-        new Bus().run();
+        Rider r1=new Rider();
+        Rider r2=new Rider();
+        Bus b1=new Bus();
+        r1.start();
+        r2.start();
+        b1.start();
     }
 }

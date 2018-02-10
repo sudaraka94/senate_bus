@@ -4,7 +4,7 @@ package com.company;
 import static java.lang.Integer.max;
 import static java.lang.Integer.min;
 
-public class Bus implements Runnable {
+public class Bus extends Thread{
 
     @Override
     public void run() {
@@ -19,7 +19,8 @@ public class Bus implements Runnable {
             }
 
             Main.waiting=max(Main.waiting-50,0);
-            Main.mutex.acquire();
+            System.out.println(Main.waiting);
+            Main.mutex.release();
             depart();
 
         } catch (InterruptedException e) {
