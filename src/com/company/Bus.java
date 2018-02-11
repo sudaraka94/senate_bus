@@ -24,7 +24,6 @@ public class Bus extends Thread{
             }
 
             Main.waiting=max(Main.waiting-50,0);
-            System.out.println(Main.waiting);
             Main.mutex.release();
             depart();
 
